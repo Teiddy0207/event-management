@@ -19,6 +19,7 @@ func RegisterEventRoutes(r *gin.Engine, controller *controllers.EventController)
 	events := r.Group("/events")
 	{
 		events.GET("", controller.ListEvents)
+		events.POST("/api/create-events", controller.CreateEvent)
 	}
 }
 
